@@ -14,7 +14,7 @@ from PIL import Image
 from scipy.signal import savgol_filter
 import requests
 
-from plant_classification.data_utils import data_augmentation
+from phytoplankton_classification.data_utils import data_augmentation
 
 def training_plots(info_file, filtering=True):
     """

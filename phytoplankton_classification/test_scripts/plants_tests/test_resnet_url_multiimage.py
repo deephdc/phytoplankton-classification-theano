@@ -44,7 +44,7 @@ if dataset == 'inaturalist':
 
 # Loading the model
 modelname = 'resnet50_6182classes_100epochs'
-test_func = load_model(os.path.join(homedir, 'plant_classification', 'training_weights', modelname + '.npz'), output_dim=6182)
+test_func = load_model(os.path.join(homedir, 'phytoplankton_classification', 'training_weights', modelname + '.npz'), output_dim=6182)
 
 # Launching prediction
 pred_dict = {'pred_lab': [], 'pred_prob': [], 'true_lab': [], 'im_per_obs': []}

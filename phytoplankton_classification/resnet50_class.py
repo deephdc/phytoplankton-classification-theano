@@ -23,8 +23,8 @@ import theano
 import theano.tensor as T
 import lasagne
 
-from plant_classification.data_utils import iterate_minibatches, data_augmentation
-from plant_classification.models.resnet50 import build_model
+from phytoplankton_classification.data_utils import iterate_minibatches, data_augmentation
+from phytoplankton_classification.models.resnet50 import build_model
 
 theano.config.floatX = 'float32'
 
@@ -262,8 +262,8 @@ class prediction_net(object):
 
         if save_model:
             filename = 'resnet50_' + str(self.output_dim) + 'classes_' + str(self.num_epochs) + 'epochs'
-            with open(os.path.join(homedir, 'plant_classification', 'training_info', filename + '.json'), 'w') as outfile:
+            with open(os.path.join(homedir, 'phytoplankton_classification', 'training_info', filename + '.json'), 'w') as outfile:
                 json.dump(train_info, outfile)
-            np.savez(os.path.join(homedir, 'plant_classification', 'training_weights', filename + '.npz'), *lasagne.layers.get_all_param_values(net['prob']))
+            np.savez(os.path.join(homedir, 'phytoplankton_classification', 'training_weights', filename + '.npz'), *lasagne.layers.get_all_param_values(net['prob']))
 
         return test_fn

@@ -41,7 +41,7 @@ modelname = 'resnet50_6182classes_100epochs'
 metadata = np.genfromtxt(op.join(homedir, 'data', 'data_splits', 'synsets.txt'), dtype='str', delimiter='/n')
 
 # Load training info
-info_file = op.join(homedir, 'plant_classification', 'training_info', modelname + '.json')
+info_file = op.join(homedir, 'phytoplankton_classification', 'training_info', modelname + '.json')
 with open(info_file) as datafile:
     train_info = json.load(datafile)
 output_dim = train_info['training_params']['output_dim']
@@ -254,7 +254,7 @@ def plots(saliency_map):
 
 
 # Load net weights
-weights_path = op.join(homedir, 'plant_classification', 'training_weights', modelname + '.npz')
+weights_path = op.join(homedir, 'phytoplankton_classification', 'training_weights', modelname + '.npz')
 net = load_model(weights_path, output_dim=output_dim, use_guided_backprop=True)
 saliency_func = compile_saliency_function(net)
 

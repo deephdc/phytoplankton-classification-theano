@@ -10,8 +10,8 @@ import os
 
 import numpy as np
 
-import plant_classification.resnet50_class as resnet
-from plant_classification.data_utils import data_augmentation, standard_tencrop_batch
+import phytoplankton_classification.resnet50_class as resnet
+from phytoplankton_classification.data_utils import data_augmentation, standard_tencrop_batch
 
 
 def test_predictions(test_func, im_list, aug_params=None, crop_mode='random'):

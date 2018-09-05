@@ -13,7 +13,7 @@ import theano
 import theano.tensor as T
 import lasagne
 
-from plant_classification.models.resnet50 import build_model
+from phytoplankton_classification.models.resnet50 import build_model
 
 theano.config.floatX = 'float32'
 

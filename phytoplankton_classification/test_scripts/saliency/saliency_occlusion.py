@@ -34,7 +34,7 @@ modelname = 'resnet50_6182classes_100epochs'
 metadata = np.genfromtxt(op.join(homedir, 'data', 'data_splits', 'synsets.txt'), dtype='str', delimiter='/n')
 
 # Load training info
-info_file = op.join(homedir, 'plant_classification', 'training_info', modelname + '.json')
+info_file = op.join(homedir, 'pythoplankton_classification', 'training_info', modelname + '.json')
 with open(info_file) as datafile:
     train_info = json.load(datafile)
 output_dim = train_info['training_params']['output_dim']
@@ -43,7 +43,7 @@ if np.any(mean_RGB) == None:
     mean_RGB = np.array([107.59348955, 112.1047813, 80.9982362])
 
 # Load net weights
-weights_path = op.join(homedir, 'plant_classification', 'training_weights', modelname + '.npz')
+weights_path = op.join(homedir, 'pythoplankton_classification', 'training_weights', modelname + '.npz')
 test_func = load_model(weights_path, output_dim=output_dim)
 
 
